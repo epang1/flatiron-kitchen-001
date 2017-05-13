@@ -1,0 +1,18 @@
+<h1>Editing Recipe</h1>
+
+  <%= form_for @recipe do |f| %>
+    Recipe Name: <%= f.text_field :name %><br>
+    Ingredients:<br>
+
+    <% Ingredient.all.each do |ingredient| %>
+      <%= label_tag ingredient.name, ingredient.name %>
+      <%= check_box_tag("recipe[ingredient_ids][]", value = ingredient.id, checked = false, options = {id: ingredient.name}) %>
+      <br>
+    <% end %>
+
+
+    <%= f.submit "Update Recipe"%>
+  <% end %>
+
+<%= link_to 'Show', @recipe %> |
+<%= link_to 'Back', recipes_path %>

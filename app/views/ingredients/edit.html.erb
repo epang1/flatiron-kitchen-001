@@ -1,0 +1,10 @@
+<h1>Editing Ingredient</h1>
+
+
+<%= form_for @ingredient do |f| %>
+<%= f.text_field :name %>
+<%= f.submit %>
++<% end %>
+
+<%= link_to 'Show', @ingredient %> |
+<%= link_to 'Back', ingredients_path %>
